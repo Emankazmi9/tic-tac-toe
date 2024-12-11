@@ -8,6 +8,7 @@ const resetgame=()=>{
     let turnO=true;
     enableboxes();
     msgcontainer.classList.add("hide");
+    reset.classList.remove("hide");
 }
 let winnerpattren=[
     [0,1,2],
@@ -42,8 +43,9 @@ const checkDraw = () => {
     let filledBoxes = 0;
     for (let box of boxes) {
         if (box.innerText !== "") {
+            if(pos1==!pos2&&pos2==!pos3){
             filledBoxes++;
-        }
+        }}
     }
     if (filledBoxes === 9) {
         msg.innerText = "It's a draw!";
